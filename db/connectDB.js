@@ -8,6 +8,7 @@ const connectDB = async () => {
     console.log("Mongo blogDB connected successfully");
   } catch (error) {
     console.log("Error connecting to the blogDB database");
+    console.log(error.message);
   }
 };
 
