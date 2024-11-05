@@ -1,3 +1,3 @@
 const authController = require("./authController");
-
-module.exports = { authController };
+const notFoundController = require("./notFoundController");
+module.exports = { authController, notFoundController };

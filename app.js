@@ -8,6 +8,7 @@ const morgan = require("morgan");
 const connectDB = require("./db/connectDB");
 const { authRoute } = require("./routes");
 const { errorHandler } = require("./middlewares");
+const { notFoundController } = require("./controllers");
 
 const app = express();
 // connect to database
@@ -20,6 +21,8 @@ app.use(morgan("dev"));
 
 // routes section
 app.use("/api/v1/auth", authRoute);
+// not found route
+app.use("*", notFoundController);
 
 // error handler middleware
 app.use(errorHandler);
