@@ -5,7 +5,7 @@ const signup = async (req, res, next) => {
     //throw new Error("Test error");
     const { name, email, password, role } = req.body;
 
-    const isUserExist = await User({ email });
+    const isUserExist = await User.findOne({ email });
     if (isUserExist) {
       return res.status(400).json({
         code: 400,
